@@ -4,13 +4,9 @@
 
 Each directory contains a standalone [Revel](http://revel.github.io/manual)  application, eg
 
-狂欢是好的，保存UTF8 。保持微笑，享受..抱怨..请让它好看 
+狂欢是好的，保存UTF8 。保持微笑，享受..抱怨..请让它好看
 
 
-```
-git clone https://github.com/revel/examples.git $GOPATH/src/github.com/revel/examples
-revel run github.com/revel/examples/booking
-```
 * [Booking](https://revel.github.io/examples/booking.html)
   - A database-driven hotel-booking application, including user management
 
@@ -29,14 +25,13 @@ revel run github.com/revel/examples/booking
 * [Facebook OAuth2](https://revel.github.io/examples/facebook-oauth2.html)
   - Display Facebook user information using OAuth2.
   
-  
+* [Swagger](https://github.com/go-swagger/go-swagger)
+  - Demonstrates how to incorporate go-swagger for spec generation
+
+
 
 
 
 - If you spot a mistake etc, then let us know
 - If you have a good sample application idea, then let us know
-- If you got an app, then please make a pull request 
-
-
-
-
+- If you got an app, then please make a pull request
