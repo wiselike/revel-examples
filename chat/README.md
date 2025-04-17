@@ -1,6 +1,6 @@
 Chat App Demo
 =========================
-The `Chat` app demonstrates ([browse the source](https://github.com/revel/samples/tree/master/chat)):
+The `Chat` app demonstrates ([browse the source](https://github.com/wiselike/revel-samples/tree/master/chat)):
 
 * Using channels to implement a chat room with a [publish-subscribe](http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) model.
 * Using both `Comet` and [Websockets](../manual/websockets.html)
@@ -24,7 +24,7 @@ Here's a quick summary of the structure:
 # Chat Room Background
 
 First, let's look at how the chat room is implemented, in
-[`app/chatroom/chatroom.go`](https://github.com/revel/samples/blob/master/chat/app/chatroom/chatroom.go).
+[`app/chatroom/chatroom.go`](https://github.com/wiselike/revel-samples/blob/master/chat/app/chatroom/chatroom.go).
 
 The chat room runs as an independent `go-routine`, started on initialization:
 
@@ -124,7 +124,7 @@ expose that functionality using different techniques.
 ### Active Refresh
 
 The Active Refresh chat room javascript refreshes the page every five seconds to
-get any new messages (see [`Refresh/Room.html`](https://github.com/revel/samples/blob/master/chat/app/views/Refresh/Room.html)):
+get any new messages (see [`Refresh/Room.html`](https://github.com/wiselike/revel-samples/blob/master/chat/app/views/Refresh/Room.html)):
 
 ```js
 // Scroll the messages panel to the end
@@ -143,7 +143,7 @@ var refresh = function() {
 setInterval(refresh, 5000);
 ```
 
-This is the handler to serve the above in [`app/controllers/refresh.go`](https://github.com/revel/revel/tree/master/samples/chat/app/controllers/refresh.go):
+This is the handler to serve the above in [`app/controllers/refresh.go`](https://github.com/wiselike/revel/tree/master/samples/chat/app/controllers/refresh.go):
 
 ```go
 func (c Refresh) Room(user string) revel.Result {
@@ -167,7 +167,7 @@ rendered (after changing the user name to "you" as necessary).
 
 ### Long Polling with Comet
 
-The Long Polling chat room (see [`LongPolling/Room.html`](https://github.com/revel/revel/tree/master/samples/chat/app/views/LongPolling/Room.html))
+The Long Polling chat room (see [`LongPolling/Room.html`](https://github.com/wiselike/revel/tree/master/samples/chat/app/views/LongPolling/Room.html))
 makes an ajax request that the server keeps open until a new message comes in. The javascript uses a
 `lastReceived` timestamp to tell the server the last message it knows about.
 
@@ -199,7 +199,7 @@ var getMessages = function() {
 getMessages();
 ```
 
-The handler for the above in [`app/controllers/longpolling.go`](https://github.com/revel/samples/blob/master/chat/app/controllers/longpolling.go)
+The handler for the above in [`app/controllers/longpolling.go`](https://github.com/wiselike/revel-samples/blob/master/chat/app/controllers/longpolling.go)
 
 ```go
 func (c LongPolling) WaitMessages(lastReceived int) revel.Result {
@@ -231,7 +231,7 @@ assuming it has already sent back everything in the archive.
 
 ### Websocket
 
-The Websocket chat room (see  [WebSocket/Room.html](https://github.com/revel/samples/blob/master/chat/app/views/WebSocket/Room.html#L51))
+The Websocket chat room (see  [WebSocket/Room.html](https://github.com/wiselike/revel-samples/blob/master/chat/app/views/WebSocket/Room.html#L51))
 opens a [websocket](../manual/websockets.html) connection as soon as the
 user has loaded the page.
 
@@ -252,7 +252,7 @@ $('#send').click(function(e) {
 ```
 
 The first thing to do is to subscribe to new events, join the room, and send
-down the archive.  Here is what [websocket.go](https://github.com/revel/revel/tree/master/samples/chat/app/controllers/websocket.go#L17) looks like:
+down the archive.  Here is what [websocket.go](https://github.com/wiselike/revel/tree/master/samples/chat/app/controllers/websocket.go#L17) looks like:
 
 ```go
 func (c WebSocket) RoomSocket(user string, ws *websocket.Conn) revel.Result {
@@ -276,7 +276,7 @@ func (c WebSocket) RoomSocket(user string, ws *websocket.Conn) revel.Result {
 
 Next, we have to listen for new events from the subscription.  However, the
 websocket library only provides a blocking call to get a new frame.  To select
-between them, we have to wrap it ([websocket.go](https://github.com/revel/revel/tree/master/samples/chat/app/controllers/websocket.go#L33)):
+between them, we have to wrap it ([websocket.go](https://github.com/wiselike/revel/tree/master/samples/chat/app/controllers/websocket.go#L33)):
 
 ```go
 // In order to select between websocket messages and subscription events, we
@@ -324,7 +324,7 @@ return nil
 
 ```
 
-> [websocket.go](https://github.com/revel/revel/tree/master/samples/chat/app/controllers/websocket.go#L48)
+> [websocket.go](https://github.com/wiselike/revel/tree/master/samples/chat/app/controllers/websocket.go#L48)
 
 If we detect the websocket channel has closed, then we just return nil.
 

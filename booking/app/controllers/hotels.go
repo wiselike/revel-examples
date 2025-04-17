@@ -31,9 +31,9 @@ import (
 	"strings"
 
 	"github.com/Masterminds/squirrel"
-	"github.com/revel/examples/booking/app/models"
-	"github.com/revel/examples/booking/app/routes"
-	"github.com/revel/revel"
+	"github.com/wiselike/revel-examples/booking/app/models"
+	"github.com/wiselike/revel-examples/booking/app/routes"
+	"github.com/wiselike/revel"
 	"golang.org/x/crypto/bcrypt"
 )
 

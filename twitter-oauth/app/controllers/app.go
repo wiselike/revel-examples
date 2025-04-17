@@ -5,8 +5,8 @@ import (
 	"io/ioutil"
 
 	"github.com/mrjones/oauth"
-	"github.com/revel/examples/twitter-oauth/app/models"
-	"github.com/revel/revel"
+	"github.com/wiselike/revel-examples/twitter-oauth/app/models"
+	"github.com/wiselike/revel"
 )
 
 var TWITTER = oauth.NewConsumer(

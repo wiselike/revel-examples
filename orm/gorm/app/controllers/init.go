@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"github.com/revel/examples/orm/gorm/app/models"
-	gorm "github.com/revel/modules/orm/gorm/app"
-	"github.com/revel/revel"
+	"github.com/wiselike/revel-examples/orm/gorm/app/models"
+	gorm "github.com/wiselike/revel-modules/orm/gorm/app"
+	"github.com/wiselike/revel"
 )
 
 func initializeDB() {

@@ -2,7 +2,7 @@ Hotel Bookings
 ===============================
 
 This is a clone of the booking application that uses the pongo2 and ace engines
-The Booking sample app demonstrates ([browse the source](https://github.com/revel/samples/tree/master/booking)):
+The Booking sample app demonstrates ([browse the source](https://github.com/wiselike/revel-samples/tree/master/booking)):
 
 * Using an SQL (SQLite) database and configuring the Revel DB module.
 * Using the third party [GORP](https://github.com/go-gorp/gorp) *ORM-ish* library
@@ -48,11 +48,11 @@ $ brew install pkgconfig sqlite3
 
 Once you have SQLite installed, it will be possible to run the booking app:
 
-	$ revel run github.com/revel/samples/booking
+	$ revel run github.com/wiselike/revel-samples/booking
 
 ## Database / Gorp Plugin
 
-[`app/controllers/gorp.go`](https://github.com/revel/samples/blob/master/booking/app/controllers/gorp.go) defines `GorpPlugin`, which is a plugin that does a couple things:
+[`app/controllers/gorp.go`](https://github.com/wiselike/revel-samples/blob/master/booking/app/controllers/gorp.go) defines `GorpPlugin`, which is a plugin that does a couple things:
 
 * OnAppStart: Uses the DB module to open a SQLite in-memory database, create the
   User, Booking, and Hotel tables, and insert some test records.
@@ -63,7 +63,7 @@ Once you have SQLite installed, it will be possible to run the booking app:
 
 ## Interceptors
 
-[`app/controllers/init.go`](https://github.com/revel/samples/blob/master/booking/app/controllers/init.go) 
+[`app/controllers/init.go`](https://github.com/wiselike/revel-samples/blob/master/booking/app/controllers/init.go)
 registers the [interceptors](../manual/interceptors.html) that run before every action:
 
 {% highlight go %}
@@ -90,14 +90,14 @@ func (c Hotels) checkUser() revel.Result {
 }
 {% endhighlight %}
 
-[Check out the user management code in app.go](https://github.com/revel/samples/blob/master/booking/app/controllers/app.go)
+[Check out the user management code in app.go](https://github.com/wiselike/revel-samples/blob/master/booking/app/controllers/app.go)
 
 ## Validation
 
 The booking app does quite a bit of validation.
 
 For example, here is the routine to validate a booking, from
-[models/booking.go](https://github.com/revel/samples/blob/master/booking/app/models/booking.go):
+[models/booking.go](https://github.com/wiselike/revel-samples/blob/master/booking/app/models/booking.go):
 
 {% highlight go %}
 func (booking Booking) Validate(v *revel.Validation) {
@@ -123,7 +123,7 @@ required; if it evaluates to the zero date, Revel stores a `ValidationError` in
 the validation context under the key "booking.CheckInDate".
 
 Subsequently, the
-[Hotels/Book.html](https://github.com/revel/samples/blob/master/booking/app/views/Hotels/Book.html)
+[Hotels/Book.html](https://github.com/wiselike/revel-samples/blob/master/booking/app/views/Hotels/Book.html)
 template can easily access them using the [`field`](../manual/templates.html#field) helper:
 
 {% capture ex %}{% raw %}
@@ -151,7 +151,7 @@ to bulk modify the scripts you can do something like
         echo "$file is a directory"
         cd $file && go mod tidy; 
         cd ../..;
-        go mod edit -replace "github.com/revel/revel=<yourlocalpath>" $file/go.mod ; 
+        go mod edit -replace "github.com/wiselike/revel=<yourlocalpath>" $file/go.mod ;
       done
 
 Before committing change them back by doing
@@ -161,6 +161,6 @@ Before committing change them back by doing
         echo "$file is a directory"
         cd $file && go mod tidy; 
         cd ../..;
-        go mod edit -dropreplace "github.com/revel/revel" $file/go.mod ; 
+        go mod edit -dropreplace "github.com/wiselike/revel" $file/go.mod ;
       done
 

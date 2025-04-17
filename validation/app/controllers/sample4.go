@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"github.com/revel/examples/validation/app/models"
-	"github.com/revel/revel"
+	"github.com/wiselike/revel-examples/validation/app/models"
+	"github.com/wiselike/revel"
 )
 
 type Sample4 struct {

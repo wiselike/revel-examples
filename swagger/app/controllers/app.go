@@ -26,7 +26,7 @@
 package controllers
 
 import (
-	"github.com/revel/revel"
+	"github.com/wiselike/revel"
 )
 
 type Application struct {

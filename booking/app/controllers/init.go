@@ -1,6 +1,6 @@
 package controllers
 
-import "github.com/revel/revel"
+import "github.com/wiselike/revel"
 
 func init() {
 	revel.InterceptMethod(Application.AddUser, revel.BEFORE)

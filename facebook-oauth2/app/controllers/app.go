@@ -7,8 +7,8 @@ import (
 	"net/url"
 	"strconv"
 
-	"github.com/revel/examples/facebook-oauth2/app/models"
-	"github.com/revel/revel"
+	"github.com/wiselike/revel-examples/facebook-oauth2/app/models"
+	"github.com/wiselike/revel"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/facebook"
 )

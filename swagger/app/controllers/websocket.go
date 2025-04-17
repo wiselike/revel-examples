@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"github.com/revel/revel"
+	"github.com/wiselike/revel"
 
-	"github.com/revel/examples/chat/app/chatroom"
+	"github.com/wiselike/revel-examples/chat/app/chatroom"
 )
 
 type WebSocket struct {

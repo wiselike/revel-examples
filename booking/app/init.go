@@ -7,10 +7,10 @@ import (
 	"time"
 
 	"github.com/go-gorp/gorp"
-	"github.com/revel/examples/booking/app/models"
-	rgorp "github.com/revel/modules/orm/gorp/app"
-	"github.com/revel/revel"
-	"github.com/revel/revel/logger"
+	"github.com/wiselike/revel-examples/booking/app/models"
+	rgorp "github.com/wiselike/revel-modules/orm/gorp/app"
+	"github.com/wiselike/revel"
+	"github.com/wiselike/revel/logger"
 	"github.com/valyala/fasthttp"
 	"golang.org/x/crypto/bcrypt"
 )

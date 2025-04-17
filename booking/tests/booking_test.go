@@ -8,14 +8,14 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/revel/cmd/model"
-	revelParser "github.com/revel/cmd/parser"
-	"github.com/revel/revel"
+	"github.com/wiselike/revel-cmd/model"
+	revelParser "github.com/wiselike/revel-cmd/parser"
+	"github.com/wiselike/revel"
 )
 
 func getRevelContainer() *model.RevelContainer {
 	paths, _ := model.NewRevelPaths("prod",
-		"github.com/revel/examples/booking", ".",
+		"github.com/wiselike/revel-examples/booking", ".",
 		model.NewWrappedRevelCallback(func(key model.Event, value interface{}) model.EventResponse {
 			return model.EventResponse(0)
 		},
@@ -26,13 +26,13 @@ func getRevelContainer() *model.RevelContainer {
 
 // A test for processing the booking application source.
 func TestProcessBookingSource(t *testing.T) {
-	revel.Init("prod", "github.com/revel/examples/booking", "")
+	revel.Init("prod", "github.com/wiselike/revel-examples/booking", "")
 	sourceInfo, err := revelParser.ProcessSource(getRevelContainer())
 	if err != nil {
 		t.Fatal("Failed to process booking source with error:", err)
 	}
 
-	controllerPackage := "github.com/revel/examples/booking/app/controllers"
+	controllerPackage := "github.com/wiselike/revel-examples/booking/app/controllers"
 	expectedControllerSpecs := []*model.TypeInfo{
 		{"Application", controllerPackage, "controllers", nil, nil},
 		{"Hotels", controllerPackage, "controllers", nil, nil},
@@ -71,7 +71,7 @@ NEXT_TEST:
 // Performance test for booking application
 // this tests the speed of the command line utility to process the source of the booking application.
 func BenchmarkProcessBookingSource(b *testing.B) {
-	revel.Init("", "github.com/revel/examples/booking", "")
+	revel.Init("", "github.com/wiselike/revel-examples/booking", "")
 	b.ResetTimer()
 
 	for i := 0; i < b.N; i++ {

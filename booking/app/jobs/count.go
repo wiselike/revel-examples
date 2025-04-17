@@ -3,10 +3,10 @@ package jobs
 import (
 	"fmt"
 
-	"github.com/revel/examples/booking/app/models"
-	"github.com/revel/modules/jobs/app/jobs"
-	gorp "github.com/revel/modules/orm/gorp/app"
-	"github.com/revel/revel"
+	"github.com/wiselike/revel-examples/booking/app/models"
+	"github.com/wiselike/revel-modules/jobs/app/jobs"
+	gorp "github.com/wiselike/revel-modules/orm/gorp/app"
+	"github.com/wiselike/revel"
 )
 
 // Periodically count the bookings in the database.

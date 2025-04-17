@@ -1,7 +1,7 @@
 Hotel Booking Example
 ===============================
 
-The Hotel Booking example app demonstrates ([browse the source](https://github.com/revel/examples/tree/master/booking)):
+The Hotel Booking example app demonstrates ([browse the source](https://github.com/wiselike/revel-examples/tree/master/booking)):
 
 * Using an SQL (SQLite) database and configuring the Revel DB module.
 * Using the third party [GORP](https://github.com/go-gorp/gorp) *ORM-ish* library
@@ -50,12 +50,12 @@ $ sudo apt-get install sqlite3 libsqlite3-dev
 
 Once SQLite is installed, it will be possible to run the booking app:
 ```sh
-	$ revel run github.com/revel/examples/booking
+	$ revel run github.com/wiselike/revel-examples/booking
 ```
 
 ## Database / Gorp Plugin
 
-[`app/controllers/gorp.go`](https://github.com/revel/examples/blob/master/booking/app/controllers/gorp.go) defines `GorpPlugin`, which is a plugin that does a couple things:
+[`app/controllers/gorp.go`](https://github.com/wiselike/revel-examples/blob/master/booking/app/controllers/gorp.go) defines `GorpPlugin`, which is a plugin that does a couple things:
 
 * **`OnAppStart`** -  Uses the DB module to open a SQLite in-memory database, create the `User`, `Booking`, and `Hotel` tables, and insert some test records.
 * **BeforeRequest** -  Begins a transaction and stores the Transaction on the Controller
@@ -65,7 +65,7 @@ Once SQLite is installed, it will be possible to run the booking app:
 
 ## Interceptors
 
-[`app/controllers/init.go`](https://github.com/revel/examples/blob/master/booking/app/controllers/init.go) 
+[`app/controllers/init.go`](https://github.com/wiselike/revel-examples/blob/master/booking/app/controllers/init.go) 
 registers the [interceptors](../manual/interceptors.html) that runs before each action:
 
 ```go
@@ -92,14 +92,14 @@ func (c Hotels) checkUser() revel.Result {
 }
 ```
 
-[Check out the user management code in app.go](https://github.com/revel/examples/blob/master/booking/app/controllers/app.go)
+[Check out the user management code in app.go](https://github.com/wiselike/revel-examples/blob/master/booking/app/controllers/app.go)
 
 ## Validation
 
 The booking app does quite a bit of validation.
 
 For example, here is the routine to validate a booking, from
-[models/booking.go](https://github.com/revel/examples/blob/master/booking/app/models/booking.go):
+[models/booking.go](https://github.com/wiselike/revel-examples/blob/master/booking/app/models/booking.go):
 
 ```go
 func (booking Booking) Validate(v *revel.Validation) {
@@ -125,7 +125,7 @@ required; if it evaluates to the zero date, Revel stores a `ValidationError` in
 the validation context under the key "booking.CheckInDate".
 
 Subsequently, the
-[Hotels/Book.html](https://github.com/revel/examples/blob/master/booking/app/views/Hotels/Book.html)
+[Hotels/Book.html](https://github.com/wiselike/revel-examples/blob/master/booking/app/views/Hotels/Book.html)
 template can access them using the [`field`](../manual/templates.html#field) helper:
 
 ```

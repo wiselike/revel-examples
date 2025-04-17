@@ -7,7 +7,7 @@ import (
 	_ "image/jpeg"
 	_ "image/png"
 
-	"github.com/revel/revel"
+	"github.com/wiselike/revel"
 )
 
 const (

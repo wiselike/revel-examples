@@ -4,8 +4,8 @@ import (
 	"net/url"
 	"path"
 
-	"github.com/revel/revel"
-	"github.com/revel/revel/testing"
+	"github.com/wiselike/revel"
+	"github.com/wiselike/revel/testing"
 )
 
 // SingleTest is a test suite of Multiple controller.

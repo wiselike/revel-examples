@@ -4,9 +4,9 @@ import (
 	"time"
 
 	"github.com/go-gorp/gorp"
-	"github.com/revel/examples/booking2/app/models"
-	rgorp "github.com/revel/modules/orm/gorp/app"
-	"github.com/revel/revel"
+	"github.com/wiselike/revel-examples/booking2/app/models"
+	rgorp "github.com/wiselike/revel-modules/orm/gorp/app"
+	"github.com/wiselike/revel"
 	"golang.org/x/crypto/bcrypt"
 )
 

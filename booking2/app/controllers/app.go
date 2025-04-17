@@ -3,9 +3,9 @@ package controllers
 import (
 	"database/sql"
 
-	"github.com/revel/examples/booking2/app/models"
-	gorpController "github.com/revel/modules/orm/gorp/app/controllers"
-	"github.com/revel/revel"
+	"github.com/wiselike/revel-examples/booking2/app/models"
+	gorpController "github.com/wiselike/revel-modules/orm/gorp/app/controllers"
+	"github.com/wiselike/revel"
 	"golang.org/x/crypto/bcrypt"
 )
 

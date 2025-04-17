@@ -1,9 +1,7 @@
 language: go
 
 go:
-  - "1.13"
-  - "1.14"
-  - "1.15"
+  - "1.19"
   - "tip"
 
 os:
@@ -19,7 +17,7 @@ branches:
     - develop
 
 services:
-  # github.com/revel/revel/cache
+  # github.com/wiselike/revel/cache
   - memcache
   - redis-server
 
@@ -43,35 +41,35 @@ install:
   - export REVEL_BRANCH="develop"
   - 'if [[ "$TRAVIS_BRANCH" == "master" ]]; then export REVEL_BRANCH="master"; fi'
   - 'echo "Travis branch: $TRAVIS_BRANCH, Revel dependency branch: $REVEL_BRANCH"'
-  # - go mod edit -replace "github.com/revel/revel=github.com/revel/revel@$REVEL_BRANCH" examples/booking/go.mod
+  # - go mod edit -replace "github.com/wiselike/revel=github.com/wiselike/revel@$REVEL_BRANCH" examples/booking/go.mod
   # Build the revel CLI based on branch
   - export GO111MODULE=on
-  - git clone -b $REVEL_BRANCH git://github.com/revel/cmd
-  - cd cmd; go build -o $GOPATH/bin/revel github.com/revel/cmd/revel; ls -lah $GOPATH/bin; cd ..; rm -rf cmd
+  - git clone -b $REVEL_BRANCH git://github.com/wiselike/revel-cmd
+  - cd cmd; go build -o $GOPATH/bin/revel github.com/wiselike/revel-cmd/revel; ls -lah $GOPATH/bin; cd ..; rm -rf cmd
   # Update the go.mod files in the example folder with the correct branch
   - |
     for file in booking ; do echo "$file is a directory";
       cat $file/go.mod
-      echo "replace github.com/revel/modules => github.com/revel/modules $REVEL_BRANCH" >> $file/go.mod
-      echo "replace github.com/revel/revel => github.com/revel/revel $REVEL_BRANCH" >> $file/go.mod
+      echo "replace github.com/wiselike/revel-modules => github.com/wiselike/revel-modules $REVEL_BRANCH" >> $file/go.mod
+      echo "replace github.com/wiselike/revel => github.com/wiselike/revel $REVEL_BRANCH" >> $file/go.mod
     done
 
   # Checkout the other projects to test backwards compatibility
   - export GO111MODULE=auto
-  - git clone -b $REVEL_BRANCH git://github.com/revel/revel ../revel/
-  - git clone -b $REVEL_BRANCH git://github.com/revel/modules ../modules/
-  - git clone -b $REVEL_BRANCH git://github.com/revel/config ../config/
-  - git clone -b $REVEL_BRANCH git://github.com/revel/cron ../cron/
-  - go get -t -v github.com/revel/revel/...
+  - git clone -b $REVEL_BRANCH git://github.com/wiselike/revel ../revel/
+  - git clone -b $REVEL_BRANCH git://github.com/wiselike/revel-modules ../modules/
+  - git clone -b $REVEL_BRANCH git://github.com/wiselike/revel-config ../config/
+  - git clone -b $REVEL_BRANCH git://github.com/wiselike/revel-cron ../cron/
+  - go get -t -v github.com/wiselike/revel/...
 
 
 script:
-  - revel test -v -a github.com/revel/examples/booking2
-  - revel test -v -a github.com/revel/examples/chat
-  - revel test -v -a github.com/revel/examples/facebook-oauth2
-  - revel test -v -a github.com/revel/examples/twitter-oauth
-  - revel test -v -a github.com/revel/examples/validation
-  - revel test -v -a github.com/revel/examples/upload
+  - revel test -v -a github.com/wiselike/revel-examples/booking2
+  - revel test -v -a github.com/wiselike/revel-examples/chat
+  - revel test -v -a github.com/wiselike/revel-examples/facebook-oauth2
+  - revel test -v -a github.com/wiselike/revel-examples/twitter-oauth
+  - revel test -v -a github.com/wiselike/revel-examples/validation
+  - revel test -v -a github.com/wiselike/revel-examples/upload
 
   # Should not need gopath to run
   - mkdir GOPATHBACKUP

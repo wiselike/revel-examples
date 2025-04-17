@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/revel/revel"
+	"github.com/wiselike/revel"
 )
 
 type User struct {

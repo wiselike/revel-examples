@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/go-gorp/gorp"
-	"github.com/revel/revel"
+	"github.com/wiselike/revel"
 )
 
 type Booking struct {
