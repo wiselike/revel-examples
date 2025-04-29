@@ -10,7 +10,9 @@ func (c Application) Index() revel.Result {
 	// Localization information
 	c.ViewArgs["acceptLanguageHeader"] = c.Request.Header.Get("Accept-Language")
 	c.ViewArgs["acceptLanguageHeaderParsed"] = c.Request.AcceptLanguages.String()
-	c.ViewArgs["acceptLanguageHeaderMostQualified"] = c.Request.AcceptLanguages[0]
+	if len(c.Request.AcceptLanguages) > 0 {
+		c.ViewArgs["acceptLanguageHeaderMostQualified"] = c.Request.AcceptLanguages[0]
+	}
 	c.ViewArgs["controllerCurrentLocale"] = c.Request.Locale
 
 	// Controller-resolves messages

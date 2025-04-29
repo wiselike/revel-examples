@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"github.com/wiselike/revel"
-    
-	"github.com/wiselike/revel-examples/chat/app/chatroom"
+
+	"github.com/wiselike/revel-examples/swagger/app/chatroom"
 )
 
 type Refresh struct {
