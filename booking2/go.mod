@@ -6,8 +6,8 @@ require (
 	github.com/Masterminds/squirrel v1.5.4
 	github.com/go-gorp/gorp v2.2.0+incompatible
 	github.com/mattn/go-sqlite3 v2.0.1+incompatible
-	github.com/wiselike/revel v1.3.2
-	github.com/wiselike/revel-modules v1.3.3
+	github.com/wiselike/revel v1.3.3
+	github.com/wiselike/revel-modules v1.3.4
 	golang.org/x/crypto v0.18.0
 )
 

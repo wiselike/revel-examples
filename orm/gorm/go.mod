@@ -4,8 +4,8 @@ go 1.19
 
 require (
 	github.com/jinzhu/gorm v1.9.16
-	github.com/wiselike/revel v1.3.2
-	github.com/wiselike/revel-modules v1.3.3
+	github.com/wiselike/revel v1.3.3
+	github.com/wiselike/revel-modules v1.3.4
 	golang.org/x/crypto v0.18.0
 )
 

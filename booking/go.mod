@@ -5,10 +5,11 @@ go 1.17
 require (
 	github.com/Masterminds/squirrel v1.5.4
 	github.com/go-gorp/gorp v2.2.0+incompatible
+	github.com/mattn/go-sqlite3 v2.0.1+incompatible
 	github.com/valyala/fasthttp v1.34.0
-	github.com/wiselike/revel v1.3.2
-	github.com/wiselike/revel-cmd v1.3.1
-	github.com/wiselike/revel-modules v1.3.3
+	github.com/wiselike/revel v1.3.3
+	github.com/wiselike/revel-cmd v1.3.2
+	github.com/wiselike/revel-modules v1.3.4
 	golang.org/x/crypto v0.18.0
 )
 
@@ -27,7 +28,6 @@ require (
 	github.com/lib/pq v1.1.1 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
-	github.com/mattn/go-sqlite3 v2.0.1+incompatible // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
