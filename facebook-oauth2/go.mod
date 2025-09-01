@@ -3,8 +3,8 @@ module github.com/wiselike/revel-examples/facebook-oauth2
 go 1.19
 
 require (
-	github.com/wiselike/revel v1.3.3
-	github.com/wiselike/revel-modules v1.3.4
+	github.com/wiselike/revel v1.3.4
+	github.com/wiselike/revel-modules v1.3.5
 	golang.org/x/oauth2 v0.3.0
 )
 
